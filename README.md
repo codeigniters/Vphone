@@ -10,9 +10,9 @@ copy file Vphone.php in path application/libraries
 
 #example validation phone number
 
-`
+```
 $this->vphone->set_phone('09336505170');
 $result = $this->vphone->check();
 
 var_dump($result);
-`
+```
