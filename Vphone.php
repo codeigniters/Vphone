@@ -2,23 +2,21 @@
 
 class Vphone
 {
-    private $CI     = null;
-
-    public $phone   = null;
-    public $type    = 'IR';
-
+    public $phone;
+    public $type;
 
     function __construct() 
     {
-        $this->CI =& get_instance();
+        $this->phone    = NULL;
+        $this->type     = 'IR';
     }
 
 
     /**
-     * set phone number
-     *
-     * @param $phone
-     */
+    * set phone number
+    *
+    * @param $phone
+    */
     public function set_phone($phone = NULL)
     {
         $this->phone = $phone;
@@ -26,10 +24,10 @@ class Vphone
 
 
     /**
-     * set type, IR is default
-     *
-     * @param $type
-     */
+    * set type, IR is default
+    *
+    * @param $type
+    */
     public function set_type($type = 'IR')
     {
         $this->type = $type;
@@ -59,7 +57,6 @@ class Vphone
         switch($this->type)
         {
             case 'IR':
-            case 'ir':
                 return '/^(09)[0-9]{8}\d$/';
         }
 
@@ -77,7 +74,7 @@ class Vphone
      */
     private function validation()
     {
-        if($this->phone AND get_regex())
+        if($this->phone AND $this->get_regex())
         {
             if(preg_match($this->get_regex(), $this->phone))
             {
