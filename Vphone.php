@@ -5,6 +5,7 @@ class Vphone
     public $phone;
     public $type;
 
+
     function __construct() 
     {
         $this->phone    = NULL;
@@ -76,7 +77,7 @@ class Vphone
     {
         if($this->phone AND $this->get_regex())
         {
-            if(preg_match($this->get_regex(), $this->phone))
+            if(preg_match($this->get_regex(), $this->toDigit($this->phone)))
             {
                 return TRUE;
             }
@@ -85,4 +86,17 @@ class Vphone
         return FALSE;
     }
 
+    /**
+     * convert persian number to english number
+     *
+     * @param string
+     *
+     * @return string
+     */
+    private function toDigit($string)
+    {
+        $persian = array('۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹');
+        $num = range(0, 9);
+        return str_replace($persian, $num, $string);
+    }
 }
