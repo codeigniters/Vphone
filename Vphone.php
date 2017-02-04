@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
 
 class Vphone
 {
@@ -58,6 +58,7 @@ class Vphone
         switch($this->type)
         {
             case 'IR':
+            case 'ir':
                 return '/^(09)[0-9]{8}\d$/';
         }
 
