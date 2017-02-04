@@ -2,9 +2,13 @@
 
 class Vphone
 {
+    /**
+    * Programing web : Mohammad Ghanbari
+    * Mobile : +989336505170
+    **/
+    
     public $phone;
     public $type;
-
 
     function __construct() 
     {
@@ -57,9 +61,21 @@ class Vphone
     {
         switch($this->type)
         {
+
+            // START TYPE IR - IRAN
+
             case 'IR':
             case 'ir':
                 return '/^(09)[0-9]{8}\d$/';
+            case 'IR0098':
+            case 'ir0098':
+                return '/^(0098)[0-9]{9}\d$/';
+            case 'IR+98':
+            case 'ir+98':
+                return '/^(\+98)[0-9]{9}\d$/';
+
+            // END TYPE IR - IRAN
+
         }
 
         return FALSE;
