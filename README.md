@@ -21,4 +21,4 @@ before or after set_phone
 `$this->vphone->set_type('IR')`
 
 IR is default
-You can use ('IR' | 'ir') OR ('IR0098' | 'ir0098') OR ('IR+98' | 'ir+98')
+You can use `('IR' | 'ir') OR ('IR0098' | 'ir0098') OR ('IR+98' | 'ir+98')`
